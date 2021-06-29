@@ -1,4 +1,7 @@
 import "./App.css";
+import Docxtemplater from "docxtemplater";
+import PizZip from "pizzip";
+import PizZipUtils from "pizzip/utils/index.js";
 import {
   Form,
   FormGroup,
@@ -7,9 +10,18 @@ import {
   Button
 } from "react-bootstrap";
 function App() {
+  //https://stackblitz.com/edit/react-docxtemplater-example?file=app.js
   const submitHandler = (e) => {
     e.preventDefault();
+    /*loadFile('', function(error, content){
+      if(error)
+        throw error;
+    })*/
+    console.log(e);
   };
+  function loadFile(url, callback) {
+    PizZipUtils.getBinaryContent(url, callback);
+  }
   return (
     <div className="App">
       <Form onSubmit={submitHandler}>
